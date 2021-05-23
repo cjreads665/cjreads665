@@ -560,13 +560,13 @@ footer{
   /*profile-pic*/
   .pic{
     display: flex;
+    width: 100%;
     justify-content: right;
-    float: right;
-    width: 70%;
   }
   .pic img{
-    width: 100%;
+    width: 80%;
     position: relative;
+    justify-self: end;
   }
  
   /*projects section*/
