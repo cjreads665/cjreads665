@@ -533,7 +533,7 @@ footer{
 
   }
   .head,.tail{
-    top: 2vh;
+    top: 3.2vh;
   }
   .head{
     font-family: var(--heading);
@@ -562,7 +562,7 @@ footer{
     display: flex;
     justify-content: right;
     float: right;
-    width: 90%;
+    width: 70%;
   }
   .pic img{
     width: 100%;
