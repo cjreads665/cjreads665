@@ -1,0 +1,805 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Poppins:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/*global variables*/
+* {
+  --border: red 1px solid;
+  --heading:"Poppins", sans-serif;
+  --parahead: "Mukta", sans-serif;
+  --sketchyfont:'Cabin Sketch', cursive;
+}
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+}
+.sign{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    
+}
+body {
+  position: relative;
+  
+  
+}
+/*copied from top*/
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  height: 8vh;
+  background-color: white;
+  justify-content: center;
+}
+#navbar ul {
+  list-style: none;
+  display: flex;
+}
+#navbar ul a {
+  text-decoration: none;
+  color: rgb(68, 68, 88);
+  font-family: "IBM Plex Sans", sans-serif;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+footer{
+  scroll-margin-top: 5vh;
+}
+.last{
+  font-size: 0.7rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+
+}
+
+
+/*                                  for desktops and laptops                          */
+@media screen and (min-width: 1020px) {
+
+  /*this is for all*/
+  main,
+  footer {
+    margin-top: 10vh;
+  }
+  footer{
+    margin-top: 0;
+  }
+  /*this is navbar*/
+  #navbar {
+    z-index: 2;
+  }
+  #navbar ul a {
+    padding-top: 3vh;
+    margin: 0 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /*this is for welcome-section*/
+  #welcome-section {
+    height: 100vh;
+    
+    background: rgb(218, 233, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(218, 233, 255, 1) 37%,
+      rgba(236, 246, 251, 1) 48%
+    );
+    margin: 0 3.5vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  #welcome-section .head {
+    text-transform: capitalize;
+    display: inline-block;
+    width: 60%;
+
+    margin-left: 5%;
+    position: absolute;
+    top: 5rem;
+    font-family: var(--heading);
+    font-size: 3.7rem;
+    line-height: 5.5rem;
+  }
+  .material-icons.icon1 {
+    display: none;
+    font-size: 3.7rem;
+    color: rgba(10, 72, 255, 1);
+  }
+  .material-icons.icon1 ~ span {
+    position: relative;
+    right: ;
+    color: rgba(10, 72, 255, 1);
+  }
+  .material-icons.icon1 ~ span::after {
+    content: '';
+    background-color: yellow;
+    height: 10px;
+    width: 16rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    }
+  #welcome-section .tail {
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 18rem;
+    width: 50%;
+    font-size: 1.5rem;
+    font-family: var(--parahead);
+  }
+  /*the picture*/
+  .pic {
+    position: relative;
+  }
+  .pic > img {
+    width: 50%;
+    position: absolute;
+    bottom: -6rem;
+    left: 41.5rem;
+    opacity: 0.95;
+    /* background: url(Confetti-Doodles.svg); */
+  }
+  /*the confetti*/
+  .pic::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -41.5rem;
+    right: 0rem;
+    width: 40%;
+    height: 48rem;
+    opacity: 0.1;
+    background-image: url("Confetti-Doodles.svg");
+  }
+  /*hr line*/
+  hr {
+    display: none;
+    margin: 3% 5%;
+    opacity: 0.5;
+  }
+
+  /*projects section*/
+  #projects {
+    background-color: #101820FF;
+    color:;
+    height: 100vh;
+  }
+
+  #projects > h2 {
+    font-size: 2rem;
+    font-family: var(--sketchyfont) ;
+    color: white;
+    padding-top: 5%;
+    margin-bottom: 6%;
+    position: relative;
+    font-size: 5rem;
+    text-align: center;
+  }
+  #projects > h2::after {
+    position: absolute;
+    content: '';
+    background: url(arrow.svg) no-repeat;
+    background-size: 10%;
+    top:6rem;
+    display: inline-block;
+    width: 100%;
+    height: 10rem;
+    /* border: 2px red solid; */
+  }
+
+  /*this is cards section*/
+  .cards {
+    font-family: "Mukta", sans-serif;
+    ;
+    overflow: hidden;
+    width: 20%;
+    height: 25rem;
+    display: inline-block ;
+    border-radius: 7px;
+    box-shadow: 10px 10px 2px rgb(18, 73, 70);
+    margin-left: 4%;
+    transition: transform 500ms ease-out;
+  }
+  .cards:hover{
+    transform: scale(1.02);
+  }
+  .cards img{
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+  .card-content{
+    background-color: #080808;
+    height: inherit;
+    margin-top: -17px;
+    padding: 1.2rem;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.5rem;
+    color: white;
+   
+    
+  }
+  .card-content p{
+    margin-bottom: 2%;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  .card-title{
+    display: inline-block;
+    width: 100%;
+    margin: 1% 0%;
+    margin-left: 0%;
+    font-size: 130%;
+    position: relative;
+  }
+  .card-title::after{
+    content: '';
+    display: block;
+    background-color: rgb(16, 110, 16);
+    height: 0.25rem;
+    width: 100%;
+    transition: ease-out 500ms;
+    position: absolute;
+    right: 10%;
+    transform: scaleX(0);
+    transform-origin: left;
+    bottom: -7px;
+  }
+  .cards:hover .card-title::after{
+    transform: scaleX(1.1);
+    
+  }
+
+  .pro-link{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: rgba(23, 163, 23,0.5);
+    width: 43%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    transition: 400ms ease ;
+  }
+  .pro-link::after{
+    position: absolute;
+    right: 10% ;
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    margin-left: 5%; 
+    opacity: 0;
+  }
+  .pro-link:hover{
+    width: 50%;
+    background-color: rgba(23, 163, 23,1);
+
+  }
+  .pro-link:hover::after{
+    opacity: 1;
+  }
+  
+  /* .card-content .sign::after {
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    margin-left: 5%;  
+    width: 0%;
+    opacity: 0;
+  } */
+
+  /*this is contact section*/
+  #contact {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #c8dbe4;
+  }
+  #contact h2{
+    bottom: 2rem;
+    font-size: 3.5rem;
+    width: 90%;
+    text-align: center;
+    font-weight: 900;
+    position: relative;
+    top: 5%;
+  }
+  #contact h2::after{
+    content: '';
+    position: absolute;
+    right: 15rem;
+    top: 10rem;
+    width: 50%;
+    height: 20rem;
+    background-image: url(contact.svg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    color: ;
+  
+  }
+  #contact h4{
+    display: none;
+    position: relative;
+    top: 7rem;
+    text-align: center;
+    font-weight: 900;
+  }
+  #social {
+    background-color: rgba(212, 221, 224, 1);
+    height: 20%;
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0 0 2px 2px;
+    margin-top: 25rem;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .fab{
+    font-size: 3rem;
+    color: rgb(36, 36, 206);
+    height: 2px;
+    margin-bottom: 1.6rem;
+    transform: scaleX(1);
+    transition: all 500ms;
+    
+  }
+  .circle a{
+    z-index: 1000;
+  }
+  .circle:hover .fab{
+    animation: icon 400ms ease-in alternate forwards;
+    transition: all 500ms;
+
+
+  }
+@keyframes icon {
+  0%{
+    transform: scaleX(1);
+   }
+  25%{ 
+   
+    transform: scale(0.75,1.2);
+
+  }
+  50%{
+    
+    transform: scale(1,1);
+
+
+  }
+  75%{
+    transform: scale(0.8,1.05);
+
+  }
+  100%{
+    transform: scaleX(1);
+
+  }
+
+}
+
+
+.fa-github{
+  color: #080808;
+}
+
+  .fa-linkedin{
+    color: #096fe4;
+  }
+  .fa-twitter{
+    color: #5293dd;
+
+  }
+  .fa-instagram{
+    color: rgb(241, 45, 10);
+  }
+  .circle{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: rgb(221, 213, 213));
+    box-shadow: 
+    2px 2px 2px 5px rgba(145, 153, 155, 0.15),
+    -2px -2px 2px 5px rgba(145, 153, 155, 0.15)
+    
+    ;
+    transition: all 500ms;
+
+    
+  }
+  .circle::after{
+    content: '';
+    position: absolute;
+    width: 8rem;
+    height:8rem;
+    background-color: rgb(221, 213, 213));
+    border: 0.5px solid grey;
+    border-radius: inherit;
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse {
+    0%{
+      transform: scale(0.8);
+    }
+    100%{
+      transform: scale(1.1);
+      opacity: 0;
+    }
+  }
+  /*this is for wayne card*/
+  .wayne{
+    padding-bottom: 4.2vh;
+    background-color: white;
+  }
+}
+
+
+
+
+/*                                  for android mobile                                */
+@media screen and (max-width: 380px){
+  /*common height*/
+  #welcome-section , #projects, #contact{
+    height: 100vh;
+    scroll-margin-top: 7vh;
+  }
+  /*default img size*/
+  img{
+    width: 10%;
+  }
+  /*for navbar to get fixed*/
+  body{
+    overflow-x: hidden;
+  }
+  /*nav bar*/
+  #navbar{
+    height: 7vh;
+    background-color: white;
+    z-index: 1;
+  }
+  #navbar ul{
+    display: flex;
+    justify-content:space-evenly;
+    width: 80%;
+  }
+  #navbar ul li{
+    display: grid;
+    place-items: center;
+
+  }
+  #navbar ul li a{
+    font-size: 0.8rem;
+  }
+
+  /*main*/
+  main{
+    margin-top: 8vh;
+  }
+  /*welcome section*/
+  #welcome-section {
+    
+    
+    background: rgb(218, 233, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(218, 233, 255, 1) 37%,
+      rgba(236, 246, 251, 1) 48%
+    );
+    margin: 0 3.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+  .head{
+    font-family: var(--heading);
+    text-transform: capitalize;
+    margin-left: 5%;
+    font-size: 2rem;
+  }
+  .icon1~span, .icon1{
+    color: rgb(41, 41, 201);
+    position: relative;
+  }
+  .icon1::after{
+    content: '';
+    height: 0.5rem;
+    width: 10rem;
+    position: absolute;
+    background-color: yellow;
+    bottom: -1rem;
+  }
+  .tail{
+    font-family: var(--parahead);
+    margin-left: 5%;
+  }
+  /*profile-pic*/
+  .pic{
+    display: flex;
+    justify-content: right;
+    float: right;
+    width: 100%;
+  }
+  .pic img{
+    width: 100%;
+    position: relative;
+  }
+  .pic::before{
+    content: '';
+    width: 92%;
+    height: .5%;
+    position: absolute;
+    border: var(--border);
+    background-image: url(Confetti-Doodles.svg);
+    background-position-x: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: inherit;
+    opacity: 0.1;
+  }
+  /*projects section*/
+  #projects{
+    background-color: #101820FF;
+    height: 270vh;
+ 
+  }
+  #projects h2{
+    font-family: var(--sketchyfont);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+    top:1rem;
+  }
+    /*cards*/
+    .cards{
+      box-shadow: 10px 10px 2px rgb(18, 73, 70);
+      width: 80%;
+      height: 22%;
+      color: white;
+      font-family: "Mukta", sans-serif;
+      margin: 12% 10%;
+      overflow: hidden;
+      border-radius: 8px;
+      background-color: black;
+    }
+    .cards img{
+    width: 100%;
+      text-align: center;
+    }
+    .card-content{
+      margin-top: 1.1rem;
+      margin-left: 7%;
+    }
+    .pro-link{
+      position: relative;
+      top: rem;
+      text-decoration: none;
+      color: white;
+      width: 47%;
+      padding: 4%;
+      border-radius: 5px;
+      background-color: rgba(23, 163, 23,0.5);
+      font-family: "Nunito",sans-serif;
+      transition: all 250ms ease;
+  
+    }
+    .pro-link::after{
+      position: absolute;
+      content: "\f054";
+      font-family: "Font Awesome 5 Free";
+      /* opacity: 0; */
+      right: 0.7rem;
+      bottom: 0.8rem;
+    }
+    .card-title{
+      position: relative;
+    }
+    .card-content p{
+      margin-top: 3%;
+    }
+    .card-title::after{
+        content: '';
+        display: block;
+        background-color: rgb(16, 110, 16);
+        height: 0.19rem;
+        width: 100%;
+        transition: ease-out 500ms;
+        position: absolute;
+        right:10%;
+        
+    }
+  
+    #contact {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      background-color: #c8dbe4;
+    }
+    #contact h2{
+      font-size: 2rem;
+      width: 90%;
+      text-align: center;
+      font-weight: 900;
+      position: relative;
+    }
+    #contact h2::after{
+      content: '';
+      position: absolute;
+      top: rem;
+      width: 100%;
+      height: 20rem;
+      background-image: url(contact.svg) ;
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: block;
+      color: ;
+    
+    }
+    #contact h4{
+      display: ;
+      position: relative;
+      top: 7rem;
+      text-align: center;
+      font-weight: 900;
+    }
+    #social {
+      background-color: rgba(212, 221, 224, 1);
+      height: 10%;
+      width: 95%;
+      border-radius: 10px;
+      border: 1px solid black;
+      box-shadow: 0 0 2px 2px;
+      margin-top: 5.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      
+    }
+    .fab{
+      font-size: 1.5rem;
+      color: rgb(36, 36, 206);
+      height: 2px;
+      margin-bottom: 1.1rem;
+      transform: scaleX(1);
+      transition: all 500ms;
+      
+    }
+    .circle a{
+      z-index: 1000;
+    }
+    .circle:hover .fab{
+      animation: icon 400ms ease-in alternate forwards;
+      transition: all 500ms;
+  
+  
+    }
+  @keyframes icon {
+    0%{
+      transform: scaleX(1);
+     }
+    25%{ 
+     
+      transform: scale(0.75,1.2);
+  
+    }
+    50%{
+      
+      transform: scale(1,1);
+  
+  
+    }
+    75%{
+      transform: scale(0.8,1.05);
+  
+    }
+    100%{
+      transform: scaleX(1);
+  
+    }
+  
+  }
+  
+  
+  .fa-github{
+    color: #080808;
+  }
+  
+    .fa-linkedin{
+      color: #096fe4;
+    }
+    .fa-twitter{
+      color: #5293dd;
+  
+    }
+    .fa-instagram{
+      color: rgb(241, 45, 10);
+    }
+    .circle{
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: rgb(221, 213, 213));
+      box-shadow: 
+      2px 2px 2px 5px rgba(145, 153, 155, 0.15),
+      -2px -2px 2px 5px rgba(145, 153, 155, 0.15)
+      
+      ;
+      transition: all 500ms;
+  
+      
+    }
+    .circle::after{
+      content: '';
+      position: absolute;
+      width: 3.7rem;
+      height:3.7rem;
+      background-color: rgb(221, 213, 213));
+      border: 0.5px solid grey;
+      border-radius: inherit;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%{
+        transform: scale(0.8);
+      }
+      100%{
+        transform: scale(1.1);
+        opacity: 0;
+      }
+    }
+    /*this is for wayne card*/
+    .wayne{
+      padding-bottom: 4.2vh;
+      background-color: white;
+    }
+
+}
+
