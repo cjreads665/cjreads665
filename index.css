@@ -567,7 +567,6 @@ footer{
   .pic img{
     display: inline-block;
     width: 80%;
-    position: relative;
     justify-self: right;
   }
  
