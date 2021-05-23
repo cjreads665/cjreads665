@@ -565,20 +565,7 @@ footer{
     width: 100%;
     position: relative;
   }
-  .pic::before{
-    display: none;
-    content: '';
-    width: 92%;
-    height: .5%;
-    position: absolute;
-    border: var(--border);
-    background-image: url(Confetti-Doodles.svg);
-    background-position-x: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: inherit;
-    opacity: 0.1;
-  }
+ 
   /*projects section*/
   #projects{
     background-color: #101820FF;
