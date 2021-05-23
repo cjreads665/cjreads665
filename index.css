@@ -566,7 +566,7 @@ footer{
   .pic img{
     width: 80%;
     position: relative;
-    justify-self: end;
+    justify-self: right;
   }
  
   /*projects section*/
