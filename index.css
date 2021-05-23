@@ -532,6 +532,9 @@ footer{
     justify-content: space-around;
 
   }
+  .head,.tail{
+    top: 2vh;
+  }
   .head{
     font-family: var(--heading);
     text-transform: capitalize;
@@ -559,7 +562,7 @@ footer{
     display: flex;
     justify-content: right;
     float: right;
-    width: 100%;
+    width: 90%;
   }
   .pic img{
     width: 100%;
