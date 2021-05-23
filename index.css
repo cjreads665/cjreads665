@@ -514,7 +514,7 @@ footer{
 
   /*main*/
   main{
-    margin-top: 8vh;
+    margin-top: 9vh;
   }
   /*welcome section*/
   #welcome-section {
@@ -566,6 +566,7 @@ footer{
     position: relative;
   }
   .pic::before{
+    display: none;
     content: '';
     width: 92%;
     height: .5%;
