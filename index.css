@@ -568,6 +568,7 @@ footer{
     display: inline-block;
     width: 80%;
     justify-self: right;
+    text-align: right;
   }
  
   /*projects section*/
