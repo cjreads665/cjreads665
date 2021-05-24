@@ -478,7 +478,7 @@ footer{
 
 
 /*                                  for android mobile                                */
-@media screen and (max-width: 380px){
+@media screen and (max-width: 480px){
   /*common height*/
   #welcome-section , #projects, #contact{
     height: 100vh;
